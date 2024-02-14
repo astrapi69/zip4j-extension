@@ -24,7 +24,8 @@
  */
 package io.github.astrapi69.zip4j;
 
-import io.github.astrapi69.BaseTestCase;
+import io.github.astrapi69.file.create.DirectoryFactory;
+import io.github.astrapi69.test.base.BaseTestCase;
 import io.github.astrapi69.file.FileExtensions;
 import io.github.astrapi69.file.create.FileCreationState;
 import io.github.astrapi69.file.create.FileFactory;
@@ -116,35 +117,35 @@ public abstract class FileTestCase extends BaseTestCase
 		this.test = new File(projectPath.getAbsoluteFile(), "/src/test/resources");
 		if (!this.test.exists())
 		{
-			final FileCreationState state = FileFactory.newDirectory(this.test);
+			final FileCreationState state = DirectoryFactory.newDirectory(this.test);
 			assertTrue(state.equals(FileCreationState.CREATED),
 				"The directory " + this.test.getAbsolutePath() + " should be created.");
 		}
 		this.zipDir = new File(this.test.getAbsoluteFile(), "zipDir");
 		if (!this.zipDir.exists())
 		{
-			final FileCreationState state = FileFactory.newDirectory(this.zipDir);
+			final FileCreationState state = DirectoryFactory.newDirectory(this.zipDir);
 			assertTrue(state.equals(FileCreationState.CREATED),
 				"The directory " + this.zipDir.getAbsolutePath() + " should be created.");
 		}
 		this.unzipDir = new File(this.test.getAbsoluteFile(), "unzipDir");
 		if (!this.unzipDir.exists())
 		{
-			final FileCreationState state = FileFactory.newDirectory(this.unzipDir);
+			final FileCreationState state = DirectoryFactory.newDirectory(this.unzipDir);
 			assertTrue(state.equals(FileCreationState.CREATED),
 				"The directory " + this.unzipDir.getAbsolutePath() + " should be created.");
 		}
 		this.resources = new File(this.test.getAbsoluteFile(), "resources");
 		if (!this.resources.exists())
 		{
-			final FileCreationState state = FileFactory.newDirectory(this.resources);
+			final FileCreationState state = DirectoryFactory.newDirectory(this.resources);
 			assertTrue(state.equals(FileCreationState.CREATED),
 				"The directory " + this.resources.getAbsolutePath() + " should be created.");
 		}
 		this.testResources = new File(this.test.getAbsoluteFile(), "resources");
 		if (!this.testResources.exists())
 		{
-			final FileCreationState state = FileFactory.newDirectory(this.testResources);
+			final FileCreationState state = DirectoryFactory.newDirectory(this.testResources);
 			assertTrue(
 
 				state.equals(FileCreationState.CREATED),
@@ -153,14 +154,14 @@ public abstract class FileTestCase extends BaseTestCase
 		this.testDir = new File(this.testResources.getAbsoluteFile(), "testDir");
 		if (!this.testDir.exists())
 		{
-			final FileCreationState state = FileFactory.newDirectory(this.testDir);
+			final FileCreationState state = DirectoryFactory.newDirectory(this.testDir);
 			assertTrue(state.equals(FileCreationState.CREATED),
 				"The directory " + this.testDir.getAbsolutePath() + " should be created.");
 		}
 		this.secondTestDir = new File(this.testResources.getAbsoluteFile(), "secondTestDir");
 		if (!secondTestDir.exists())
 		{
-			final FileCreationState state = FileFactory.newDirectory(this.secondTestDir);
+			final FileCreationState state = DirectoryFactory.newDirectory(this.secondTestDir);
 			assertTrue(
 
 				state.equals(FileCreationState.CREATED),
@@ -169,7 +170,7 @@ public abstract class FileTestCase extends BaseTestCase
 		this.deepDir = new File(this.testDir.getAbsoluteFile(), "deepDir");
 		if (!this.deepDir.exists())
 		{
-			final FileCreationState state = FileFactory.newDirectory(this.deepDir);
+			final FileCreationState state = DirectoryFactory.newDirectory(this.deepDir);
 			assertTrue(state.equals(FileCreationState.CREATED),
 				"The directory " + this.deepDir.getAbsolutePath() + " should be created.");
 
@@ -177,7 +178,7 @@ public abstract class FileTestCase extends BaseTestCase
 		this.deepDir2 = new File(this.testDir.getAbsoluteFile(), "deepDir2");
 		if (!this.deepDir2.exists())
 		{
-			final FileCreationState state = FileFactory.newDirectory(this.deepDir2);
+			final FileCreationState state = DirectoryFactory.newDirectory(this.deepDir2);
 			assertTrue(state.equals(FileCreationState.CREATED),
 				() -> "The directory " + this.deepDir2.getAbsolutePath() + " should be created.");
 
@@ -185,7 +186,7 @@ public abstract class FileTestCase extends BaseTestCase
 		this.deeperDir = new File(this.deepDir.getAbsoluteFile(), "deeperDir");
 		if (!this.deeperDir.exists())
 		{
-			final FileCreationState state = FileFactory.newDirectory(this.deeperDir);
+			final FileCreationState state = DirectoryFactory.newDirectory(this.deeperDir);
 			assertTrue(state.equals(FileCreationState.CREATED),
 				() -> "The directory " + this.deeperDir.getAbsolutePath() + " should be created.");
 		}
